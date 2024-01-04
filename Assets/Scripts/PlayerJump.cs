@@ -48,13 +48,17 @@ public class PlayerJump : MonoBehaviour
             Debug.Log("Setting animation state to 4");
         }
 
-        if (stateInfo.IsName("jump3") && stateInfo.normalizedTime >= 0.1f)
+        if (stateInfo.IsName("jump3") && stateInfo.normalizedTime >= 0.1f && isGrounded)
         {
             animator.SetInteger("state", 5);
             Debug.Log("Setting animation state to 5");
             animator.SetBool("jumping", false);
             sc.height = ogH;
             sc.center = new Vector3(sc.center.x, ogY, sc.center.z);
+        }
+        else if(!isGrounded)
+        {
+            animator.SetInteger("state", 2);
         }
     }
 
