@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>(); 
     }
-    void Update()
+    void FixedUpdate()
     {
         // Get player input
         float horizontal = Input.GetAxis("Horizontal");
