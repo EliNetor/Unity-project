@@ -10,8 +10,12 @@ public class PlayerMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
+<<<<<<< HEAD
 
     void Update()
+=======
+    void FixedUpdate()
+>>>>>>> 029fe672ee990b6594bd6132592cd261b36a3011
     {
         if (!isJumping)
         {
