@@ -32,11 +32,14 @@ public class PlayerController : MonoBehaviour
         gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
-    void Update()
+    void FixedUpdate()
+    {
+        Move();
+    }
+    private void Update()
     {
         IsGrounded();
         Jump();
-        Move();
     }
 
     private void Jump()
