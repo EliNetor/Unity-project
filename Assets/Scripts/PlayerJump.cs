@@ -4,11 +4,15 @@ public class PlayerJump : MonoBehaviour
 {
     private Rigidbody rb;
     private bool isGrounded = false;
-    private const float jumpForce = 500f;
+    private const float minJumpForce = 300f;
+    private const float maxJumpForce = 600f;
+    private const float chargeRate = 800f; // Adjust as needed for quicker charging
+    private float currentJumpForce = 0f;
     private Animator animator;
     private CapsuleCollider sc;
     private float ogY;
     private float ogH;
+    private PlayerMovement playerMovement;
 
     void Start()
     {
@@ -17,22 +21,73 @@ public class PlayerJump : MonoBehaviour
         sc = GetComponent<CapsuleCollider>();
         ogY = sc.center.y;
         ogH = sc.height;
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     void Update()
     {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
         if (isGrounded)
-        {          
-            if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Input.GetKey(KeyCode.Space) && currentJumpForce < maxJumpForce)
             {
-                rb.AddForce(Vector3.up * jumpForce);
+
+                currentJumpForce += chargeRate * Time.deltaTime;
+
+                // Limit the charging to the maximum jump force
+                currentJumpForce = Mathf.Min(currentJumpForce, maxJumpForce);
+                // animator.SetBool("Kneeldown", true);
+
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                // Ensure a minimum jump force is applied even if the player releases quickly
+                float jumpForceToApply = Mathf.Max(currentJumpForce, minJumpForce);
+                rb.AddForce(Vector3.up * jumpForceToApply);
                 animator.SetBool("jumping", true);
                 animator.SetInteger("state", 2);
                 sc.height = 1.6f;
-                sc.center = new Vector3(sc.center.x,1.2f, sc.center.z);
+                playerMovement.SetIsJumping(true);
+                Vector3 jumpDirection = Vector3.zero;
+
+                if (Input.GetKey(KeyCode.W))
+                {
+                    jumpDirection += transform.forward;
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    jumpDirection -= transform.forward;
+                }
+                if (Input.GetKey(KeyCode.A))
+                {
+                    jumpDirection -= transform.right;
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    jumpDirection += transform.right;
+                }
+
+                if (jumpDirection != Vector3.zero)
+                {
+                    // Normalize the jump direction to prevent faster diagonal jumps
+                    jumpDirection = jumpDirection.normalized;
+
+                    // Apply a force in the chosen direction
+                    Vector3 directionalJump = jumpDirection * 7; // Adjust this value as needed
+                    rb.AddForce(directionalJump, ForceMode.Impulse);
+                }
+
+                sc.center = new Vector3(sc.center.x, 1.2f, sc.center.z);
                 Debug.Log("Setting animation state to 2");
+
+                // Reset charge and jump force variables
+                currentJumpForce = 0f;
+
+
             }
         }
 
@@ -67,6 +122,7 @@ public class PlayerJump : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            playerMovement.SetIsJumping(false);
         }
     }
 
