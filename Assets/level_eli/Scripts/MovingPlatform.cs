@@ -42,20 +42,20 @@ public class MovingPlatform : MonoBehaviour
         // Update the platform's position relative to the initial position
         transform.position = initialPosition + new Vector3(0.0f, offsetY, 0.0f);
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.collider.transform.SetParent(transform);
-            colliding = true;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.collider.transform.SetParent(null);
-            colliding = false;
-        }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        collision.collider.transform.SetParent(transform);
+    //        colliding = true;
+    //    }
+    //}
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        collision.collider.transform.SetParent(null);
+    //        colliding = false;
+    //    }
+    //}
 }
