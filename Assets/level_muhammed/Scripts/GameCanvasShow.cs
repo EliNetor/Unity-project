@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameCanvasShow : MonoBehaviour
 {
-    string test;
+    [SerializeField] private string NextLVL;
     public void WinSetup()
     {
         gameObject.SetActive(true);
@@ -15,14 +15,12 @@ public class GameCanvasShow : MonoBehaviour
 
     public void NextLevelButton()
     {
-        //SceneManager.LoadScene("Sample Scene");
-        test = "k";
+        SceneManager.LoadScene(NextLVL);
     }
 
     public void MainMenuButton()
     {
-        //SceneManager.LoadScene("Mainmenu");
-        test = "k";
+        SceneManager.LoadScene("menu");
     }
 
     public void LoseSetup()
@@ -32,6 +30,6 @@ public class GameCanvasShow : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene("level_muhammed");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
