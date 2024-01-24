@@ -4,24 +4,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
+using UnityEditor;
 
 public class DetectCollectedScript : MonoBehaviour
 {
-    public MonoBehaviour script1; // Assign in Unity Editor
-    public string method1; // Assign in Unity Editor
-    public string SceneToLoad;
+    public string sceneToLoad;
+    public Volume oldVolume;
+    public Volume newVolume;
+    public GameObject task;
+    public GameObject celebration;
+
 
     private void Update()
     {
         if (transform.childCount == 0)
         {
-            script1.Invoke(method1, 0f); // Call the first method immediately
+            oldVolume.enabled = false;
+            newVolume.enabled = true;
+            task.SetActive(false);
+            celebration.SetActive(true);
             Invoke("LoadMenu", 10f);
         }
     }
     private void LoadMenu()
     {
-        SceneManager.LoadScene(SceneToLoad);
+        SceneManager.LoadScene(sceneToLoad);
     }
 
 }
