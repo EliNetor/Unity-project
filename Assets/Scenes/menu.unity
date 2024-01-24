@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+>>>>>>> b0e4eca3d8f8b7d0e7e327dd433745911ba8bb5a
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -674,6 +678,14 @@ PrefabInstance:
     - target: {fileID: 8256221021587955815, guid: a09e2a717f1d0554eada0fedca957dc2,
         type: 3}
       propertyPath: scene2
+<<<<<<< HEAD
+=======
+      value: level_bram
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256221021587955815, guid: a09e2a717f1d0554eada0fedca957dc2,
+        type: 3}
+      propertyPath: scene3
+>>>>>>> b0e4eca3d8f8b7d0e7e327dd433745911ba8bb5a
       value: level_muhammed
       objectReference: {fileID: 0}
     - target: {fileID: 8256221021587955815, guid: a09e2a717f1d0554eada0fedca957dc2,

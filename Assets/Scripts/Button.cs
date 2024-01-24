@@ -8,6 +8,7 @@ public class Button : MonoBehaviour
 {
     [SerializeField] private string sceneName;
 
+
     void ButtonClicked(int buttonNo)
     {
         SceneManager.LoadScene(sceneName);
