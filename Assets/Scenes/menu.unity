@@ -38,11 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-<<<<<<< HEAD
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
-=======
   m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
->>>>>>> b0e4eca3d8f8b7d0e7e327dd433745911ba8bb5a
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -245,19 +241,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &271475847 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2074228960220253383, guid: a09e2a717f1d0554eada0fedca957dc2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1444736889}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &271475850 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8256221021587955815, guid: a09e2a717f1d0554eada0fedca957dc2,
     type: 3}
   m_PrefabInstance: {fileID: 1444736889}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271475847}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fee0e933887ea684f8afb849d9c03e5a, type: 3}
@@ -678,14 +668,11 @@ PrefabInstance:
     - target: {fileID: 8256221021587955815, guid: a09e2a717f1d0554eada0fedca957dc2,
         type: 3}
       propertyPath: scene2
-<<<<<<< HEAD
-=======
       value: level_bram
       objectReference: {fileID: 0}
     - target: {fileID: 8256221021587955815, guid: a09e2a717f1d0554eada0fedca957dc2,
         type: 3}
       propertyPath: scene3
->>>>>>> b0e4eca3d8f8b7d0e7e327dd433745911ba8bb5a
       value: level_muhammed
       objectReference: {fileID: 0}
     - target: {fileID: 8256221021587955815, guid: a09e2a717f1d0554eada0fedca957dc2,
@@ -702,11 +689,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 271475847}
+      objectReference: {fileID: 271475850}
     - target: {fileID: 9205683894299368103, guid: a09e2a717f1d0554eada0fedca957dc2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: LoadScene3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2937490435956228389, guid: a09e2a717f1d0554eada0fedca957dc2, type: 3}
