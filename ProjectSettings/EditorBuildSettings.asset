@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/level_muhammed.unity
+    guid: 6db19a9f892175544af212f54f49391a
   m_configObjects: {}

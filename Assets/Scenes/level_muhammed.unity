@@ -39988,6 +39988,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1393934718588470368, guid: cb5cb7b4f144b854a8842dcfa4e8f28b,
+        type: 3}
+      propertyPath: NextLVL
+      value: endCredits
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462853144799593908, guid: cb5cb7b4f144b854a8842dcfa4e8f28b,
+        type: 3}
+      propertyPath: m_Text
+      value: Credits
+      objectReference: {fileID: 0}
     - target: {fileID: 5044559376027711634, guid: cb5cb7b4f144b854a8842dcfa4e8f28b,
         type: 3}
       propertyPath: m_Pivot.x
@@ -40092,6 +40102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameWin
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337452075795508215, guid: cb5cb7b4f144b854a8842dcfa4e8f28b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
